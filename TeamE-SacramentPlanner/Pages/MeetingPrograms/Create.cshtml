@@ -1,0 +1,89 @@
+﻿@page
+@model TeamE_SacramentPlanner.Pages.MeetingPrograms.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MeetingProgram</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.MeetingDate" class="control-label"></label>
+                <input asp-for="MeetingProgram.MeetingDate" class="form-control" />
+                <span asp-validation-for="MeetingProgram.MeetingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.Presiding" class="control-label"></label>
+                <input asp-for="MeetingProgram.Presiding" class="form-control" />
+                <span asp-validation-for="MeetingProgram.Presiding" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.Conducting" class="control-label"></label>
+                <input asp-for="MeetingProgram.Conducting" class="form-control" />
+                <span asp-validation-for="MeetingProgram.Conducting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.OpHymnName" class="control-label"></label>
+                <input asp-for="MeetingProgram.OpHymnName" class="form-control" />
+                <span asp-validation-for="MeetingProgram.OpHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.OpHymnNumber" class="control-label"></label>
+                <input asp-for="MeetingProgram.OpHymnNumber" class="form-control" />
+                <span asp-validation-for="MeetingProgram.OpHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.Invocation" class="control-label"></label>
+                <input asp-for="MeetingProgram.Invocation" class="form-control" />
+                <span asp-validation-for="MeetingProgram.Invocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.SHymnName" class="control-label"></label>
+                <input asp-for="MeetingProgram.SHymnName" class="form-control" />
+                <span asp-validation-for="MeetingProgram.SHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.SHymnNumber" class="control-label"></label>
+                <input asp-for="MeetingProgram.SHymnNumber" class="form-control" />
+                <span asp-validation-for="MeetingProgram.SHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.MusicalNumber" class="control-label"></label>
+                <input asp-for="MeetingProgram.MusicalNumber" class="form-control" />
+                <span asp-validation-for="MeetingProgram.MusicalNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.ClHymnName" class="control-label"></label>
+                <input asp-for="MeetingProgram.ClHymnName" class="form-control" />
+                <span asp-validation-for="MeetingProgram.ClHymnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.ClHymnNumber" class="control-label"></label>
+                <input asp-for="MeetingProgram.ClHymnNumber" class="form-control" />
+                <span asp-validation-for="MeetingProgram.ClHymnNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MeetingProgram.Benediction" class="control-label"></label>
+                <input asp-for="MeetingProgram.Benediction" class="form-control" />
+                <span asp-validation-for="MeetingProgram.Benediction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
