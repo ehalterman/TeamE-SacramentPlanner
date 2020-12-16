@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 class="no-print">Details</h1>
 
 <div>
     <h4>MeetingProgram</h4>
@@ -85,7 +85,8 @@
         </dd>
     </dl>
 </div>
-<div>
+<div class="no-print">
     <a asp-page="./Edit" asp-route-id="@Model.MeetingProgram.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+    <input type="button" value="Print Sacrament Plan" onclick="window.print()" />
 </div>
