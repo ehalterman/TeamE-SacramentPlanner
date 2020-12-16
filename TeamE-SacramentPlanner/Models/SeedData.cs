@@ -85,11 +85,11 @@ namespace TeamE_SacramentPlanner.Models
                         Benediction = "Brother Adam Brooks"
                     }
                 );
+                context.SaveChanges();
 
                 context.Speaker.AddRange(
                     new Speaker
                     {
-                        ID = 1,
                         MeetingID = 1,
                         SpeakerName = "Brother Ian Van Ry",
                         SpeakerType = "Youth Speaker"
@@ -97,7 +97,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 2,
                         MeetingID = 1,
                         SpeakerName = "Sister Damita Van Ry",
                         SpeakerType = "Speaker"
@@ -105,7 +104,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 3,
                         MeetingID = 1,
                         SpeakerName = "Brother Chris Van Ry",
                         SpeakerType = "Speaker"
@@ -113,7 +111,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 4,
                         MeetingID = 2,
                         SpeakerName = "Sister Elizabeth Payne",
                         SpeakerType = "Youth Speaker"
@@ -121,7 +118,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 5,
                         MeetingID = 2,
                         SpeakerName = "Sister Julie Payne",
                         SpeakerType = "Speaker"
@@ -129,7 +125,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 6,
                         MeetingID = 2,
                         SpeakerName = "Brother Tom Payne",
                         SpeakerType = "Speaker"
@@ -137,7 +132,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 7,
                         MeetingID = 3,
                         SpeakerName = "Brother Aiden Bigler",
                         SpeakerType = "Youth Speaker"
@@ -145,7 +139,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 8,
                         MeetingID = 3,
                         SpeakerName = "Sister Tiffany Bigler",
                         SpeakerType = "Speaker"
@@ -153,7 +146,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 9,
                         MeetingID = 3,
                         SpeakerName = "Brother Brady Bigler",
                         SpeakerType = "Speaker"
@@ -161,7 +153,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 10,
                         MeetingID = 4,
                         SpeakerName = "Sister Norah Euken",
                         SpeakerType = "Youth Speaker"
@@ -169,7 +160,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 11,
                         MeetingID = 4,
                         SpeakerName = "Sister Nicole Euken",
                         SpeakerType = "Speaker"
@@ -177,7 +167,6 @@ namespace TeamE_SacramentPlanner.Models
 
                     new Speaker
                     {
-                        ID = 12,
                         MeetingID = 4,
                         SpeakerName = "Brother Mike Euken",
                         SpeakerType = "Speaker"

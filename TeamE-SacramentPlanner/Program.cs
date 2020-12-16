@@ -24,9 +24,6 @@ namespace TeamE_SacramentPlanner
 
                 try
                 {
-                    var context = services.
-                        GetRequiredService<Data.TeamE_SacramentPlannerContext>();
-                    context.Database.Migrate();
                     Models.SeedData.Initialize(services);
                 }
                 catch (Exception ex)
