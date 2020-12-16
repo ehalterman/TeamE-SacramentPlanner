@@ -58,5 +58,8 @@ namespace TeamE_SacramentPlanner.Models
         [Required]
         [StringLength(50)]
         public string Benediction { get; set; }
+
+        public Speaker Speaker { get; set; }
+
     }
 }

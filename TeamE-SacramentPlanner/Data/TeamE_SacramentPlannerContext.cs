@@ -17,5 +17,6 @@ namespace TeamE_SacramentPlanner.Data
         public DbSet<TeamE_SacramentPlanner.Models.MeetingProgram> MeetingProgram { get; set; }
 
         public DbSet<TeamE_SacramentPlanner.Models.Speaker> Speaker { get; set; }
+
     }
 }

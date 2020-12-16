@@ -18,12 +18,12 @@ namespace TeamE_SacramentPlanner.Pages
         {
             _context = context;
         }
-
         public IList<Speaker> Speaker { get;set; }
 
         public async Task OnGetAsync()
         {
             Speaker = await _context.Speaker.ToListAsync();
         }
+
     }
 }

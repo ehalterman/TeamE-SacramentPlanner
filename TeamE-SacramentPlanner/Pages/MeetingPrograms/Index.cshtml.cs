@@ -25,5 +25,6 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
         {
             MeetingProgram = await _context.MeetingProgram.ToListAsync();
         }
+
     }
 }
