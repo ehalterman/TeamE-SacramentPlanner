@@ -8,13 +8,14 @@
 <h1 class="no-print">Details</h1>
 
 <div>
-    <h4>MeetingProgram</h4>
-    <hr />
+    <h4>Team E Ward</h4>
+    <h4 class="d-none d-print-block">@Html.DisplayFor(model => model.MeetingProgram.MeetingDate)</h4>
+    <hr class="no-print" />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 no-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.MeetingDate)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 no-print">
             @Html.DisplayFor(model => model.MeetingProgram.MeetingDate)
         </dd>
         <dt class="col-sm-2">

@@ -1,0 +1,21 @@
+﻿@media print {
+   h4 {
+       display: block;
+       text-align: center;
+       font-size: 3rem;
+   }
+
+   dt,
+   dd {
+       padding-top: 1em;
+   }
+
+   dd {
+       text-align: right;
+   }
+
+   dl {
+       font-size: 2rem;
+       padding-top: 2.5em;
+   }
+}
