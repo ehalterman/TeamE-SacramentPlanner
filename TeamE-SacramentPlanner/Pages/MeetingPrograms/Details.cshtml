@@ -60,6 +60,21 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MeetingProgram.SHymnNumber)
         </dd>
+
+        @for (int i = 0; i < Model.MySpeakers.Count(); i++)
+        {
+
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayFor(modelItem => Model.MySpeakers[i].SpeakerType)
+                </dt>
+
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => Model.MySpeakers[i].SpeakerName)
+                </dd>
+            }
+        }
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MeetingProgram.MusicalNumber)
         </dt>
@@ -84,24 +99,8 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MeetingProgram.Benediction)
         </dd>
-        <dt class="col-sm-2">
-            <strong>Speakers</strong>
-        </dt>
-        <dd class="col-sm-10">
-            @foreach (var item2 in Model.MySpeakers)
-            {
 
-                @if (@Model.MeetingProgram.ID == item2.MeetingID)
-                {
-                    <strong>@Html.DisplayFor(modelItem => item2.SpeakerType):</strong>
-                    @Html.DisplayFor(modelItem => item2.SpeakerName)
-                    <br />
-                }
-            }
-        </dd>
-
-
-    </dl>
+            </dl>
 </div>
 <div class="no-print">
     <a asp-page="./Edit" asp-route-id="@Model.MeetingProgram.ID">Edit</a> |

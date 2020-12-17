@@ -30,7 +30,9 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
             }
 
             MeetingProgram = await _context.MeetingProgram.FirstOrDefaultAsync(m => m.ID == id);
-            MySpeakers = await _context.Speaker.ToListAsync();
+            MySpeakers = await _context.Speaker
+                .Where(s => s.MeetingID == id)
+                .ToListAsync();
 
             if (MeetingProgram == null)
             {
@@ -38,5 +40,6 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
             }
             return Page();
         }
+
     }
 }

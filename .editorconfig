@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0118: 'Speakers' is a namespace but is used like a type
+dotnet_diagnostic.CS0118.severity = error
