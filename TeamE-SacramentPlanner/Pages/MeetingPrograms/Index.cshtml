@@ -30,44 +30,46 @@
     <tbody>
         @foreach (var item in Model.MeetingProgram)
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.MeetingDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.Conducting)</td>
-                <td>
-                    <strong>Opening:</strong><br />
-                    <strong>Sacrament:</strong><br />
-                    <strong>Closing:</strong>
-                </td>
-                <td>
-                    #&nbsp;@Html.DisplayFor(modelItem => item.OpHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.OpHymnName)<br>
-                    #&nbsp;@Html.DisplayFor(modelItem => item.SHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.SHymnName)<br>
-                    #&nbsp;@Html.DisplayFor(modelItem => item.ClHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.ClHymnName)
-                </td>
-                <td>
-                    <strong>Opening:</strong><br />
-                    <strong>Closing:</strong>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Invocation)<br>
-                    @Html.DisplayFor(modelItem => item.Benediction)
-                </td>
-                <td>@Html.DisplayFor(modelItem => item.MusicalNumber)</td>
-                <td>
-                    <strong>@Html.DisplayFor(modelItem => item.Speaker.SpeakerType.FirstOrDefault):</strong><br />
-                    <strong>@Html.DisplayFor(modelItem => item.Speaker.SpeakerType):</strong><br />
-                    <strong>@Html.DisplayFor(modelItem => item.Speaker.SpeakerType):</strong>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Speaker.SpeakerName)<br>
-                    @Html.DisplayFor(modelItem => item.Speaker.SpeakerName)<br>
-                    @Html.DisplayFor(modelItem => item.Speaker.SpeakerName)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary add-space">Edit</a><br>
-                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-primary add-space">Details</a><br>
-                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-primary add-space">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MeetingDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.Conducting)</td>
+            <td>
+                <strong>Opening:</strong><br />
+                <strong>Sacrament:</strong><br />
+                <strong>Closing:</strong>
+            </td>
+            <td>
+                #&nbsp;@Html.DisplayFor(modelItem => item.OpHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.OpHymnName)<br>
+                #&nbsp;@Html.DisplayFor(modelItem => item.SHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.SHymnName)<br>
+                #&nbsp;@Html.DisplayFor(modelItem => item.ClHymnNumber)&nbsp;@Html.DisplayFor(modelItem => item.ClHymnName)
+            </td>
+            <td>
+                <strong>Opening:</strong><br />
+                <strong>Closing:</strong>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invocation)<br>
+                @Html.DisplayFor(modelItem => item.Benediction)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.MusicalNumber)</td>
+
+            <td>
+                @foreach (var item2 in Model.MySpeakers)
+                {
+
+                    @if (item.ID == item2.MeetingID)
+                    {
+                        <strong>@Html.DisplayFor(modelItem => item2.SpeakerType):</strong>
+                        @Html.DisplayFor(modelItem => item2.SpeakerName)<br />
+                     }
+                 }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary add-space">Edit</a><br>
+                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-primary add-space">Details</a><br>
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-primary add-space">Delete</a>
+             </td>
+          </tr>
         }
     </tbody>
 </table>

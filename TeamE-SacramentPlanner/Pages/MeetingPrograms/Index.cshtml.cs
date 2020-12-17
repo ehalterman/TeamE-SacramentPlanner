@@ -19,12 +19,13 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
             _context = context;
         }
 
-        public IList<MeetingProgram> MeetingProgram { get;set; }
+        public IList<MeetingProgram> MeetingProgram { get; set; }
+        public IList<Speaker> MySpeakers { get; set; }
 
         public async Task OnGetAsync()
         {
             MeetingProgram = await _context.MeetingProgram.ToListAsync();
+            MySpeakers = await _context.Speaker.ToListAsync();
         }
-
     }
 }

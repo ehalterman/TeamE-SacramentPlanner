@@ -43,8 +43,6 @@ namespace TeamE_SacramentPlanner.Pages.Speakers
 
         public async Task OnGetAsync()
         {
-
-            // Use LINQ to get list of books.
             var meetQuery = from m in _context.MeetingProgram orderby m.MeetingDate select m.ID;
             Meets = new SelectList(await meetQuery.Distinct().ToListAsync());
         }

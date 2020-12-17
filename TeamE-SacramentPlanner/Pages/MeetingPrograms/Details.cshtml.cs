@@ -20,6 +20,7 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
         }
 
         public MeetingProgram MeetingProgram { get; set; }
+        public IList<Speaker> MySpeakers { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,6 +30,7 @@ namespace TeamE_SacramentPlanner.Pages.MeetingPrograms
             }
 
             MeetingProgram = await _context.MeetingProgram.FirstOrDefaultAsync(m => m.ID == id);
+            MySpeakers = await _context.Speaker.ToListAsync();
 
             if (MeetingProgram == null)
             {
