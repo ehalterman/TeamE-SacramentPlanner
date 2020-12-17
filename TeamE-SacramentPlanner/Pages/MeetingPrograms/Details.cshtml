@@ -18,93 +18,92 @@
         <dd class="col-sm-10 no-print">
             @Html.DisplayFor(model => model.MeetingProgram.MeetingDate)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.Presiding)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.Presiding)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.Conducting)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.Conducting)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.OpHymnName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.OpHymnName)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.OpHymnNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.OpHymnNumber)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.Invocation)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.Invocation)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.SHymnName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.SHymnName)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.SHymnNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.SHymnNumber)
         </dd>
+
+        @for (int i = 0; i < Model.MySpeakers.Count(); i++)
+        {
+
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayFor(modelItem => Model.MySpeakers[i].SpeakerType)
+                </dt>
+
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => Model.MySpeakers[i].SpeakerName)
+                </dd>
+            }
+        }
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MeetingProgram.MusicalNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.MusicalNumber)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.ClHymnName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.ClHymnName)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.ClHymnNumber)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.ClHymnNumber)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 col-print">
             @Html.DisplayNameFor(model => model.MeetingProgram.Benediction)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10 col-print">
             @Html.DisplayFor(model => model.MeetingProgram.Benediction)
         </dd>
-        <dt class="col-sm-2">
-            <strong>Speakers</strong>
-        </dt>
-        <dd class="col-sm-10">
-            @foreach (var item2 in Model.MySpeakers)
-            {
 
-                @if (@Model.MeetingProgram.ID == item2.MeetingID)
-                {
-                    <strong>@Html.DisplayFor(modelItem => item2.SpeakerType):</strong>
-                    @Html.DisplayFor(modelItem => item2.SpeakerName)
-                    <br />
-                }
-            }
-        </dd>
-
-
-    </dl>
+            </dl>
 </div>
 <div class="no-print">
     <a asp-page="./Edit" asp-route-id="@Model.MeetingProgram.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
-    <input type="button" value="Print Sacrament Plan" onclick="window.print()" />
+    <input type="button" value="Print Sacrament Plan" onclick="window.print()" class="btn btn-primary add-space" />
 </div>
