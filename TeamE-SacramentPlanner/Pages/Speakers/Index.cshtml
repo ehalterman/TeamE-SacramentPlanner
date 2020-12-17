@@ -8,16 +8,32 @@
 <h1>Historical Speakers</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create a New Speaker</a>
 </p>
+
+<form>
+    
+    <div class="color_1">Select the Book</div>
+    <select asp-for="BookSSelect" asp-items="Model.Notes">
+        <option value="">All</option>
+    </select>
+
+    <div class="color_1">Filter by Speaker Name</div>
+    <input type="text" asp-for="SearchString" />
+    <input type="submit" value="Filter" />
+
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Meetings[0].MeetingDate)
-            </th>
+            </th>   
             <th>
-                @Html.DisplayNameFor(model => model.Speaker[0].SpeakerName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.BookSort">
+                    @Html.DisplayNameFor(model => model.Speaker[0].SpeakerName)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Speaker[0].SpeakerType)
