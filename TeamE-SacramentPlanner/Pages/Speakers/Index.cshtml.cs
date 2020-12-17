@@ -20,10 +20,12 @@ namespace TeamE_SacramentPlanner.Pages.Speakers
         }
 
         public IList<Speaker> Speaker { get;set; }
+        public IList<MeetingProgram> Meetings { get; set; }
 
         public async Task OnGetAsync()
         {
             Speaker = await _context.Speaker.ToListAsync();
+            Meetings = await _context.MeetingProgram.ToListAsync();
         }
     }
 }
